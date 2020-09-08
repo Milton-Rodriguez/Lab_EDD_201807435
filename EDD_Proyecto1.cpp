@@ -1,7 +1,7 @@
 
 #include <iostream>
 using namespace std;
-
+#include "controlador_avl.cpp";
 int main()
 {
     string enter;
@@ -28,7 +28,17 @@ int main()
     cout << "0. Salir\n";
     cin >> menu_opcion;
     if (menu_opcion == 1) {
-    //Ver Proyectos
+        int nodo;
+        cout << "Ingrese el nombre del nodo\n";
+        cin >> nodo;
+        controlador_avl opciones;
+        opciones.insertar(nodo);
+        
+        opciones.mostrar();
+        
+        int nodo1;
+        cout << "\nVer\n";
+        cin >> nodo1;
     }
     else if (menu_opcion == 2) {
         //Editar Proyectos

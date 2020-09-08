@@ -1,31 +1,10 @@
 using namespace std;
 #include <iostream>
-class arbolavl
+ struct arbolavl
 {
-	string nodo;
-	arbolavl izquierda();
-	arbolavl derecha();
-	int nizquierda;
-	int nderecha;
-
-public:
-	arbolavl(string nodo,arbolavl izquierda, arbolavl derecha,int nizquierda,int nderecha);
-	~arbolavl();
-	
-
-private:
-
+	int id_nodo;
+	int nderecha=0;
+	int nizquierda=0;
+	arbolavl *izquierda;
+	arbolavl *derecha;
 };
-
-arbolavl::arbolavl(string nodo, arbolavl izquierda, arbolavl derecha, int nizquierda, int nderecha) {
-	this->nodo = nodo;
-	this->izquierda = izquierda;
-	this->derecha = derecha;
-	this->nizquierda = nizquierda;
-	this->nderecha = nderecha;
-}
-
-
-arbolavl::~arbolavl()
-{
-}
