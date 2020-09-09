@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 #include "controlador_avl.cpp";
+
 int main()
 {
     string enter;
@@ -28,17 +29,41 @@ int main()
     cout << "0. Salir\n";
     cin >> menu_opcion;
     if (menu_opcion == 1) {
+        bool repetidor_ver = true;
+        while (repetidor_ver)
+        {
+            system("cls");
+       
         int nodo;
-        cout << "Ingrese el nombre del nodo\n";
-        cin >> nodo;
+        string nombre;
+
         controlador_avl opciones;
-        opciones.insertar(nodo);
-        
         opciones.mostrar();
+        cout << "\n0.Ingrese un proyecto\n";
+        cout << "555. Regresar\n";
+        int menu_mostrar;
+        cin >> menu_mostrar;
+        if (menu_mostrar == 555)
+        {
+            repetidor_ver = false;
+
+        }
+        else if (menu_mostrar ==0)
+        {
+            cout << "Ingrese el id del Proyecto:\n";
+            cin >> nodo;
+            cout << "Ingrese el nombre del Proyecto:\n";
+            cin >> nombre;
+            opciones.insertar(nodo,nombre);
+            cout << "Insertado correctamente";
+            cin.get();
+        }
+        }
         
-        int nodo1;
-        cout << "\nVer\n";
-        cin >> nodo1;
+        
+        
+        
+        
     }
     else if (menu_opcion == 2) {
         //Editar Proyectos
