@@ -1,7 +1,8 @@
 
 #include <iostream>
 using namespace std;
-#include "controlador_avl.cpp";
+#include "Proyecto.h";
+#include "arbolavl.cpp";
 
 int main()
 {
@@ -29,38 +30,7 @@ int main()
     cout << "0. Salir\n";
     cin >> menu_opcion;
     if (menu_opcion == 1) {
-        bool repetidor_ver = true;
-        while (repetidor_ver)
-        {
-            system("cls");
        
-        int nodo;
-        string nombre;
-
-        controlador_avl opciones;
-        opciones.mostrar();
-        cout << "\n0.Ingrese un proyecto\n";
-        cout << "555. Regresar\n";
-        int menu_mostrar;
-        cin >> menu_mostrar;
-        if (menu_mostrar == 555)
-        {
-            repetidor_ver = false;
-
-        }
-        else if (menu_mostrar ==0)
-        {
-            cout << "Ingrese el id del Proyecto:\n";
-            cin >> nodo;
-            cout << "Ingrese el nombre del Proyecto:\n";
-            cin >> nombre;
-            opciones.insertar(nodo,nombre);
-            cout << "Insertado correctamente";
-            cin.get();
-        }
-        }
-        
-        
         
         
         
@@ -70,6 +40,24 @@ int main()
     }
     else if (menu_opcion == 3) {
         //Cargar Proyectos
+        Proyecto* nuevo = new Proyecto("1","Hola");
+        Proyecto* nuevo1 = new Proyecto("6", "Proyecto 2");
+        Proyecto* nuevo2 = new Proyecto("7", "Proyecto 3");
+        Proyecto* nuevo3 = new Proyecto("3", "Proyectoe 4");
+        ArbolAVL* anadir = new ArbolAVL();
+        anadir->add(1,nuevo);
+        anadir->add(6, nuevo1);
+        anadir->add(5, nuevo2);
+        anadir->add(10, nuevo3);
+        NodoArbol* busqueda;
+        busqueda = anadir->root;
+        anadir->inOrden(busqueda);
+        string ele;
+        cout << "0. Salir\n";
+        cin >> ele;
+        
+        
+        
     }
     else if (menu_opcion == 4) {
         //Graficar Proyectos
