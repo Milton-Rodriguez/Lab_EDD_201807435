@@ -30,6 +30,18 @@
     <ClCompile Include="Proyecto.cpp">
       <Filter>Objetos</Filter>
     </ClCompile>
+    <ClCompile Include="ReadJSON.cpp">
+      <Filter>Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\json_reader.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\json_value.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\json_writer.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArbolAVL.h">
@@ -41,5 +53,43 @@
     <ClInclude Include="Proyecto.h">
       <Filter>Objetos</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\allocator.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\assertions.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\config.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\forwards.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\json.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\json_features.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\json_tool.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\reader.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\value.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\version.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\writer.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\json_valueiterator.inl">
+      <Filter>Archivos de encabezado</Filter>
+    </None>
   </ItemGroup>
 </Project>

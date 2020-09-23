@@ -3,6 +3,7 @@
 using namespace std;
 #include "Proyecto.h";
 #include "arbolavl.cpp";
+#include "ReadJSON.cpp";
 
 int main()
 {
@@ -53,10 +54,19 @@ int main()
         busqueda = anadir->root;
         anadir->inOrden(busqueda);
         string ele;
+        
+        
+        
+
+        //Cargar Archivo JSON
+        string archivo;
+        cout << "Ingrese la ruta del archivo";
+        cin >> archivo;
+        ReadJSON* cargar = new ReadJSON();
+        cargar->anadir(archivo);
         cout << "0. Salir\n";
         cin >> ele;
-        
-        
+        //Fin de Cargar Archivo JSON
         
     }
     else if (menu_opcion == 4) {
