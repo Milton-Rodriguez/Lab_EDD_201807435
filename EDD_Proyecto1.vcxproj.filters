@@ -48,6 +48,9 @@
     <ClCompile Include="ListaPared.cpp">
       <Filter>Objetos</Filter>
     </ClCompile>
+    <ClCompile Include="ListaObjeto.cpp">
+      <Filter>Objetos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArbolAVL.h">
@@ -102,6 +105,15 @@
       <Filter>Objetos</Filter>
     </ClInclude>
     <ClInclude Include="ListaPared.h">
+      <Filter>Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="Puntos.h">
+      <Filter>Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="Objeto.h">
+      <Filter>Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="ListaObjeto.h">
       <Filter>Objetos</Filter>
     </ClInclude>
   </ItemGroup>

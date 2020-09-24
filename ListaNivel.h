@@ -12,6 +12,6 @@ public:
 	}
 
 	void add(string id_Proyecto, string nombre_nivel);
-	void Print();
+	void Print(string id_Proyecto);
 };
 

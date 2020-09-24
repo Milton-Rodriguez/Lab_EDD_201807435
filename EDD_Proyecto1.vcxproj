@@ -153,6 +153,7 @@
     <ClCompile Include="arbolavl.cpp" />
     <ClCompile Include="EDD_Proyecto1.cpp" />
     <ClCompile Include="ListaNivel.cpp" />
+    <ClCompile Include="ListaObjeto.cpp" />
     <ClCompile Include="ListaPared.cpp" />
     <ClCompile Include="Proyecto.cpp" />
     <ClCompile Include="ReadJSON.cpp" />
@@ -170,12 +171,15 @@
     <ClInclude Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\version.h" />
     <ClInclude Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\writer.h" />
     <ClInclude Include="ListaNivel.h" />
+    <ClInclude Include="ListaObjeto.h" />
     <ClInclude Include="ListaPared.h" />
     <ClInclude Include="Nivel.h" />
+    <ClInclude Include="Objeto.h" />
     <ClInclude Include="Pared.h" />
     <ClInclude Include="Proyecto.h" />
     <ClInclude Include="ArbolAVL.h" />
     <ClInclude Include="NodoArbol.h" />
+    <ClInclude Include="Puntos.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\json_valueiterator.inl" />

@@ -5,6 +5,7 @@ using namespace std;
 #include "ReadJSON.cpp";
 #include "ListaNivel.h";
 #include "ListaPared.h";
+#include "ListaObjeto.h";
 
 int main()
 {
@@ -32,17 +33,27 @@ int main()
         cout << "0. Salir\n";
         cin >> menu_opcion;
         if (menu_opcion == 1) {
-
+            string nombreproyecto;
+            cout << "\nIngrese el Nombre del Proyecto al que desea ingresar:\n";
             ArbolAVL* anadir12 = new ArbolAVL();
             anadir12->inOrden();
-            
+            cin >> nombreproyecto;
 
+
+            string numeronivel;
+            cout << "\nIngrese el Numero de Nivel:\n";
             ListaNivel* consulta = new ListaNivel();
-            consulta->Print();
+            consulta->Print(nombreproyecto);
+            cin >> numeronivel;
 
+            cout << "\nParedes:\n";
             ListaPared* consulta2 = new ListaPared();
-            consulta2->Print();
+            consulta2->Print(nombreproyecto, numeronivel);
 
+
+            cout << "\nObjetos:\n";
+            ListaObjeto* consulta3 = new ListaObjeto();
+            consulta3->Print(nombreproyecto, numeronivel);
 
             string leer;
             cin >> leer;

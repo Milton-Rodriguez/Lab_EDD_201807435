@@ -1,5 +1,7 @@
 #pragma once
 #include "Pared.h"
+#include "Puntos.h"
+
 
 static Pared* root2;
 class ListaPared
@@ -11,6 +13,6 @@ public:
 
 	}
 
-	void add(string id_Proyecto, string nombre_nivel, int no_pared, string inicio, string final, string color);
-	void Print();
+	void add(string id_Proyecto, string nombre_nivel, int no_pared, Puntos* inicio, Puntos* final, string color);
+	void Print(string id_Proyecto, string nombre_nivel);
 };

@@ -16,4 +16,5 @@ public:
 	void inOrden();
 	void inOrden1(NodoArbol* node);
 	
+	
 };

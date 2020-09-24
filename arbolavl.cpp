@@ -36,9 +36,13 @@ inline void ArbolAVL::inOrden()
 }
 inline void ArbolAVL::inOrden1(NodoArbol* node)
 {
+	
 	if (node != nullptr) {
 		inOrden1(node->left);
-		cout << node->key << endl;
+		Proyecto* actual = node->value;
+		cout <<"Nombre: "<<actual->nombre<<"      Numero de Niveles: "<<node->key << "\n";
 		inOrden1(node->right);
 	}
 }
+
+

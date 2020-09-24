@@ -12,7 +12,6 @@
 		Nivel* aux = root1;
 		Nivel* temp = root1;
 		while (aux != nullptr) {
-			cout << "Si entra"<<aux->id_Proyecto;
 			temp = aux;
 			aux = aux->siguiente;
 		}
@@ -24,12 +23,16 @@
 	}
 }
 
- void ListaNivel::Print()
+ void ListaNivel::Print(string id_Proyecto)
 {
 	if (root1 != nullptr) {
 		Nivel* aux = root1;
 		while (aux != nullptr) {
-			cout << "Proyecto: "<<aux->id_Proyecto <<"  Nivel: "<<aux->nombre_nivel;
+			if (aux->id_Proyecto ==id_Proyecto)
+			{
+				cout << "Nivel: " << aux->nombre_nivel << "\n";
+			}
+			
 			aux = aux->siguiente;
 		}
 	}

@@ -1,11 +1,12 @@
 #include <iostream>
 #include <fstream>
 #include "json/json.h"
-
 #include "Proyecto.h";
 #include "ArbolAVL.h";
 #include "ListaNivel.h";
 #include "ListaPared.h";
+#include "ListaObjeto.h";
+#include "Puntos.h";
 using namespace std;
 #pragma warning(disable : 4996)
 class ReadJSON
@@ -66,13 +67,10 @@ inline void ReadJSON::anadir(string url) {
                 cout << "\nColor: " << characters2[k]["color"].asString();
                 //agregar Pared
                 ListaPared* andirlista = new ListaPared();
-                string inicio1 = to_string(characters3[0].asInt());
-                string inicio2 = to_string(characters3[1].asInt());
-                string inicio = inicio1 + "," + inicio2;
-                string final1 = to_string(characters4[0].asInt());
-                string final2 = to_string(characters4[1].asInt());
-                string final = final1 + "," + final2;
-                andirlista->add(characters[i]["nombre"].asString(), valornivel,k,inicio,final, characters2[k]["color"].asString());
+                Puntos* ini = new Puntos(characters3[0].asInt(), characters3[1].asInt());
+                Puntos* fin = new Puntos(characters4[0].asInt(), characters4[1].asInt());
+                
+                andirlista->add(characters[i]["nombre"].asString(), valornivel,k,ini,fin, characters2[k]["color"].asString());
                 //fin de agregar Pared
             }
             //Fin PAredes
@@ -89,13 +87,19 @@ inline void ReadJSON::anadir(string url) {
                 //Puntos
                 cout << endl;
                 const Json::Value& characters6 = characters5[p]["puntos"];
+                Puntos** arr = new Puntos*[characters6.size()];
                 for (int m = 0; m < characters6.size(); m++)
                 {
                     cout << "\n" << m;
                     cout << "\nX: " << characters6[m]["x"].asInt() << "\n";
                     cout << "\nY: " << characters6[m]["y"].asInt() << "\n";
+                    Puntos* newpoint = new Puntos(characters6[m]["x"].asInt(), characters6[m]["y"].asInt());
+                    arr[m] = newpoint;
                 }
-
+                //agregar Objeto
+                ListaObjeto* andirlista7 = new ListaObjeto();
+                andirlista7->add(characters[i]["nombre"].asString(), valornivel, characters5[p]["identificador"].asInt(), arr, characters6.size(),characters5[p]["color"].asString(),characters5[p]["nombre"].asString(), characters5[p]["letra"].asString());
+                //fin de agregar Objeto
 
                 //fin Puntos
 
