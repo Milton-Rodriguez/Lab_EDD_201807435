@@ -42,6 +42,12 @@
     <ClCompile Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\json_writer.cpp">
       <Filter>Archivos de encabezado</Filter>
     </ClCompile>
+    <ClCompile Include="ListaNivel.cpp">
+      <Filter>Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="ListaPared.cpp">
+      <Filter>Objetos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArbolAVL.h">
@@ -85,6 +91,18 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\writer.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="ListaNivel.h">
+      <Filter>Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="Nivel.h">
+      <Filter>Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="Pared.h">
+      <Filter>Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="ListaPared.h">
+      <Filter>Objetos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

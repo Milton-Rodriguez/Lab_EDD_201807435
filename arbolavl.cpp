@@ -1,7 +1,7 @@
 #include "ArbolAVL.h"
 
 
-inline void ArbolAVL::add(int key, Proyecto* value)
+inline void ArbolAVL::add1(int key, Proyecto* value)
 {
 	NodoArbol* nuevo = new NodoArbol(key);
 	nuevo->value = value;
@@ -28,12 +28,17 @@ inline void ArbolAVL::add(int key, Proyecto* value)
 		}
 	}
 }
-
-inline void ArbolAVL::inOrden(NodoArbol* node)
+inline void ArbolAVL::inOrden()
+{
+	
+	inOrden1(root);
+		
+}
+inline void ArbolAVL::inOrden1(NodoArbol* node)
 {
 	if (node != nullptr) {
-		inOrden(node->left);
+		inOrden1(node->left);
 		cout << node->key << endl;
-		inOrden(node->right);
+		inOrden1(node->right);
 	}
 }

@@ -2,15 +2,18 @@
 #include "NodoArbol.h"
 #include "Proyecto.h"
 
+static NodoArbol* root;
 class ArbolAVL
 {
 public:
-	NodoArbol* root;
-
+	
 	ArbolAVL() {
-		root = nullptr;
+		
+
 	}
 
-	void add(int key, Proyecto* value);
-	void inOrden(NodoArbol* node);
+	void add1(int key, Proyecto* value);
+	void inOrden();
+	void inOrden1(NodoArbol* node);
+	
 };
