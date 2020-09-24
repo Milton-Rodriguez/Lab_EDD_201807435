@@ -4,6 +4,7 @@ using namespace std;
 #include "arbolavl.cpp";
 #include "ReadJSON.cpp";
 #include "ListaNivel.h";
+#include "ListaPared.h";
 
 int main()
 {
@@ -38,6 +39,11 @@ int main()
 
             ListaNivel* consulta = new ListaNivel();
             consulta->Print();
+
+            ListaPared* consulta2 = new ListaPared();
+            consulta2->Print();
+
+
             string leer;
             cin >> leer;
 

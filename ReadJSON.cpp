@@ -5,6 +5,7 @@
 #include "Proyecto.h";
 #include "ArbolAVL.h";
 #include "ListaNivel.h";
+#include "ListaPared.h";
 using namespace std;
 #pragma warning(disable : 4996)
 class ReadJSON
@@ -63,7 +64,16 @@ inline void ReadJSON::anadir(string url) {
                 cout << characters4[1].asInt() << "\n";
                 //fin final
                 cout << "\nColor: " << characters2[k]["color"].asString();
-
+                //agregar Pared
+                ListaPared* andirlista = new ListaPared();
+                string inicio1 = to_string(characters3[0].asInt());
+                string inicio2 = to_string(characters3[1].asInt());
+                string inicio = inicio1 + "," + inicio2;
+                string final1 = to_string(characters4[0].asInt());
+                string final2 = to_string(characters4[1].asInt());
+                string final = final1 + "," + final2;
+                andirlista->add(characters[i]["nombre"].asString(), valornivel,k,inicio,final, characters2[k]["color"].asString());
+                //fin de agregar Pared
             }
             //Fin PAredes
             //Objetos
