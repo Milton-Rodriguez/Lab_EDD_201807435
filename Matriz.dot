@@ -1,0 +1,17 @@
+digraph G {
+node [shape=box];
+A[label=Ajk]
+B[label=B]
+C[label=C]
+D[label=D]
+A->B
+B->A
+B->C
+C->B
+C->D
+D->C
+C->A
+A->C
+{rank = same; A; C; 
+}{rank = same; B; D; 
+}}

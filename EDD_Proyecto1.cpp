@@ -6,6 +6,7 @@ using namespace std;
 #include "ListaNivel.h";
 #include "ListaPared.h";
 #include "ListaObjeto.h";
+#include "Matriz.h";
 
 int main()
 {
@@ -84,6 +85,8 @@ int main()
         }
         else if (menu_opcion == 4) {
             //Graficar Proyectos
+            Matriz* mat = new Matriz();
+            mat->graficar();
         }
         else if (menu_opcion == 5) {
             //Guardar Proyectos

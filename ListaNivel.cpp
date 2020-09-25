@@ -1,9 +1,9 @@
 #include "ListaNivel.h"
 
 
- void ListaNivel::add(string id_Proyecto, string nombre_nivel)
+ void ListaNivel::add(string id_Proyecto, string nombre_nivel, Puntos*tamano)
 {
-	Nivel* nuevo = new Nivel(id_Proyecto,nombre_nivel);
+	Nivel* nuevo = new Nivel(id_Proyecto,nombre_nivel,tamano);
 	
 	if (root1 == nullptr) {
 		root1 = nuevo;
@@ -37,3 +37,18 @@
 		}
 	}
 }
+
+ Nivel* ListaNivel::Buscar(string id_Proyecto, string nombre_nivel)
+ {
+	 if (root1 != nullptr) {
+		 Nivel* aux = root1;
+		 while (aux != nullptr) {
+			 if (aux->id_Proyecto == id_Proyecto && aux->nombre_nivel == nombre_nivel)
+			 {
+				 return aux;
+			 }
+
+			 aux = aux->siguiente;
+		 }
+	 }
+ }

@@ -151,10 +151,14 @@
     <ClCompile Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\json_value.cpp" />
     <ClCompile Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\json_writer.cpp" />
     <ClCompile Include="arbolavl.cpp" />
+    <ClCompile Include="Cabecera.cpp" />
     <ClCompile Include="EDD_Proyecto1.cpp" />
+    <ClCompile Include="Elemento.cpp" />
     <ClCompile Include="ListaNivel.cpp" />
     <ClCompile Include="ListaObjeto.cpp" />
     <ClCompile Include="ListaPared.cpp" />
+    <ClCompile Include="Matriz.cpp" />
+    <ClCompile Include="NodoMatriz.cpp" />
     <ClCompile Include="Proyecto.cpp" />
     <ClCompile Include="ReadJSON.cpp" />
   </ItemGroup>
@@ -170,10 +174,14 @@
     <ClInclude Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\value.h" />
     <ClInclude Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\version.h" />
     <ClInclude Include="..\..\..\Downloads\jsoncpp-master\jsoncpp-master\include\json\writer.h" />
+    <ClInclude Include="Cabecera.h" />
+    <ClInclude Include="Elemento.h" />
     <ClInclude Include="ListaNivel.h" />
     <ClInclude Include="ListaObjeto.h" />
     <ClInclude Include="ListaPared.h" />
+    <ClInclude Include="Matriz.h" />
     <ClInclude Include="Nivel.h" />
+    <ClInclude Include="NodoMatriz.h" />
     <ClInclude Include="Objeto.h" />
     <ClInclude Include="Pared.h" />
     <ClInclude Include="Proyecto.h" />

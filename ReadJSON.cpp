@@ -38,10 +38,12 @@ inline void ReadJSON::anadir(string url) {
         
         //fin de agregar proyecto
         for (int j = 0; j < characters[i]["niveles"].size(); j++) {
+            int xbus = 0;
+            int ybus = 0;
             //agregar nivel
             ListaNivel* andirlista = new ListaNivel();
             string valornivel = to_string(characters1[j]["nivel"].asInt());
-            andirlista->add(characters[i]["nombre"].asString(), valornivel);
+            
             //fin de agregar nivel
             cout << endl;
             cout << "\nNivel: " << characters1[j]["nivel"].asInt();
@@ -56,13 +58,32 @@ inline void ReadJSON::anadir(string url) {
                 const Json::Value& characters3 = characters2[k]["inicio"];
                 cout << characters3[0].asInt() << "\n";
                 cout << characters3[1].asInt() << "\n";
+                if (xbus < characters3[0].asInt())
+                {
+                    xbus = characters3[0].asInt();
 
+                }
+                if (ybus < characters3[1].asInt())
+                {
+                    ybus = characters3[1].asInt();
+
+                }
                 //fin inicio
                 //final
                 cout << endl;
                 const Json::Value& characters4 = characters2[k]["final"];
                 cout << characters4[0].asInt() << "\n";
                 cout << characters4[1].asInt() << "\n";
+                if (xbus < characters4[0].asInt())
+                {
+                    xbus = characters4[0].asInt();
+
+                }
+                if (ybus < characters4[1].asInt())
+                {
+                    ybus = characters4[1].asInt();
+
+                }
                 //fin final
                 cout << "\nColor: " << characters2[k]["color"].asString();
                 //agregar Pared
@@ -93,6 +114,16 @@ inline void ReadJSON::anadir(string url) {
                     cout << "\n" << m;
                     cout << "\nX: " << characters6[m]["x"].asInt() << "\n";
                     cout << "\nY: " << characters6[m]["y"].asInt() << "\n";
+                    if (xbus < characters6[m]["x"].asInt())
+                    {
+                        xbus = characters6[m]["x"].asInt();
+
+                    }
+                    if (ybus < characters6[m]["y"].asInt())
+                    {
+                        ybus = characters6[m]["y"].asInt();
+
+                    }
                     Puntos* newpoint = new Puntos(characters6[m]["x"].asInt(), characters6[m]["y"].asInt());
                     arr[m] = newpoint;
                 }
@@ -107,7 +138,9 @@ inline void ReadJSON::anadir(string url) {
 
             }
             //Fin de Objetos 
-
+            Puntos* tamano = new Puntos(xbus,ybus);
+            
+            andirlista->add(characters[i]["nombre"].asString(), valornivel,tamano);
         }
         //fin niveles
         cout << endl;

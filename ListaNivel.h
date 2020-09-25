@@ -11,7 +11,8 @@ public:
 		
 	}
 
-	void add(string id_Proyecto, string nombre_nivel);
+	void add(string id_Proyecto, string nombre_nivel,Puntos* tamano);
 	void Print(string id_Proyecto);
+	Nivel* Buscar(string id_Proyecto, string nombre_nivel);
 };
 

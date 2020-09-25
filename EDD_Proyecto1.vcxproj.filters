@@ -51,6 +51,18 @@
     <ClCompile Include="ListaObjeto.cpp">
       <Filter>Objetos</Filter>
     </ClCompile>
+    <ClCompile Include="Matriz.cpp">
+      <Filter>Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="NodoMatriz.cpp">
+      <Filter>Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="Cabecera.cpp">
+      <Filter>Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="Elemento.cpp">
+      <Filter>Objetos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArbolAVL.h">
@@ -114,6 +126,18 @@
       <Filter>Objetos</Filter>
     </ClInclude>
     <ClInclude Include="ListaObjeto.h">
+      <Filter>Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="NodoMatriz.h">
+      <Filter>Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="Matriz.h">
+      <Filter>Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="Cabecera.h">
+      <Filter>Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="Elemento.h">
       <Filter>Objetos</Filter>
     </ClInclude>
   </ItemGroup>
