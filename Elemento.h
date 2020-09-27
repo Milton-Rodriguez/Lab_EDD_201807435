@@ -21,8 +21,8 @@ public:
 private:
 	string nombreproyecto;
 	string nombrenivel;
-	int posicionx;
-	int posiciony;
+	int posicionx=0;
+	int posiciony=0;
 	Pared* pared;
 	Objeto* objeto;
 

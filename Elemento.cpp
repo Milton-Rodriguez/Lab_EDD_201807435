@@ -7,6 +7,7 @@ Elemento::Elemento(string nombreproyecto, string nombrenivel,int x,int y) {
 	this->posicionx = x;
 	this->posiciony = y;
 
+
 }
 Pared* Elemento::getPared() { return this->pared; }
 Objeto* Elemento::getObjeto() { return this->objeto; }

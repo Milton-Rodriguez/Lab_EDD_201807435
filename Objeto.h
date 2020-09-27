@@ -6,12 +6,12 @@ class Objeto
 {
 public:
 
-	string id_Proyecto;
+	string id_Proyecto="";
 	string nombre_nivel;
 	int identificador;
-	string nombre;
-	string letra;
-	string color;
+	string nombre="";
+	string letra = "";
+	string color="";
 	Puntos** arreglo;
 	int tamanoarreglo;
 	

@@ -93,7 +93,7 @@ void ListaObjeto::Print(string id_Proyecto, string nombre_nivel)
 				{
 					int a = ini->y;
 					int b = fin->y;
-					while (a ==b)
+					while (a !=b)
 					{
 						
 						Elemento* nn = new Elemento(id_Proyecto, nombre_nivel, ini->x, a);
@@ -106,7 +106,7 @@ void ListaObjeto::Print(string id_Proyecto, string nombre_nivel)
 				{
 					int a = ini->x;
 					int b = fin->x;
-					while (a == b)
+					while (a != b)
 					{
 						
 						Elemento* nn = new Elemento(id_Proyecto, nombre_nivel, a, ini->y);

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <fstream>
+#include <iostream>
 
 
 Matriz::Matriz() {
@@ -102,10 +103,12 @@ Cabecera* Matriz::crearVertical(Elemento* nombre) {
 		if (nombre->getObjeto() != NULL)
 		{
 			nueva->setObjeto(nombre->getObjeto());
+			cout << "Creador Objeto Vertical Cabeza";
 		}
 		else if (nombre->getPared() != NULL)
 		{
 			nueva->setPared(nombre->getPared());
+			cout << "Creador PAred Vertical Cabeza";
 		}
 		this->vertical = nueva;
 		return nueva;
@@ -117,10 +120,12 @@ Cabecera* Matriz::crearVertical(Elemento* nombre) {
 			if (nombre->getObjeto() != NULL)
 			{
 				nueva->setObjeto(nombre->getObjeto());
+				cout << "Creador Objeto Horizontal Cabeza";
 			}
 			else if (nombre->getPared() != NULL)
 			{
 				nueva->setPared(nombre->getPared());
+				cout << "Creador Pared Horizonatal Cabeza";
 			}
 			nueva->setSur(aux);
 			this->vertical->setNorte(nueva);
@@ -131,13 +136,16 @@ Cabecera* Matriz::crearVertical(Elemento* nombre) {
 			if (nombre->getPosiciony() > aux->getPosiciony() && nombre->getPosiciony() == ((Cabecera*)aux->getSur())->getPosiciony())
 			{
 				Cabecera* nueva = new Cabecera(nombre->getNombreproyecto(), nombre->getNombreNivel(), nombre->getPosicionx(), nombre->getPosiciony());
+				
 				if (nombre->getObjeto() != NULL)
 				{
 					nueva->setObjeto(nombre->getObjeto());
+					cout << "Creador Objeto Horizontal eNMEDIO";
 				}
 				else if (nombre->getPared() != NULL)
 				{
 					nueva->setPared(nombre->getPared());
+					cout << "Creador Objeto vetical enmedio";
 				}
 				Cabecera* tmp = (Cabecera*)aux->getSur();
 				tmp->setNorte(nueva);
@@ -276,35 +284,62 @@ void Matriz::graficar()
 		file << "digraph G {\n";
 		file << "node [shape=box];\n";
 		string alinear = "{rank=same;";
-		NodoMatriz* x = this->horizontal;
-		NodoMatriz* y = this->vertical;
-		Elemento* hola = (Elemento*)x;
-		if (hola->getObjeto()!=NULL)
-		{
-			Objeto* tmm = hola->getObjeto();
-			file << x << "[label=" << tmm->letra << "]\n";
-			file << "A->"<<x<<"\n";
-			file <<x <<"->C\n";
-		}else if (hola->getPared() != NULL)
-		{
+		Cabecera* x = this->horizontal;
+		Cabecera* y = this->vertical;
+		Elemento* hola = ((Elemento*)x);
+		
+		//Graficar Horizontal
+		Cabecera* nombre = this->horizontal;
+		Cabecera* nombre1 = this->vertical;
 			
-			file << x << "[label=" << "P" << "]\n";
-			file << "A->C\n";
-		}
-		file << "A[label="<<"Ajk"<<"]\n";
-		file << "B[label=" << "B" << "]\n";
-		file << "C[label=" << "C" << "]\n";
-		file << "D[label=" << "D" << "]\n";
-		file << "A->B\n";
-		file << "B->A\n";
-		file << "B->C\n";
-		file << "C->B\n";
-		file << "C->D\n";
-		file << "D->C\n";
-		file << "C->A\n";
-		file << "A->C\n";
-		file << "{rank = same; A; C; \n}";
-		file << "{rank = same; B; D; \n}";
+			while (nombre != NULL) {
+
+				Cabecera* nombre1 = (Cabecera*)nombre->getSur();
+				while (nombre1 != NULL) {
+
+					if (nombre1->getObjeto() != NULL)
+					{
+						Objeto* tmm = nombre1->getObjeto();
+						file << "O" << nombre1 << "[label=" << "Objeto" << "]\n";
+
+					}
+					 if (nombre1->getPared() != NULL)
+					{
+						Pared* tmm = nombre1->getPared();
+						file << "O" << nombre1 << "[label=" << "P" << "]\n";
+					}
+					if ((Cabecera*)nombre1->getSur() != NULL)
+					{
+						if (nombre1->getPosiciony() == ((Cabecera*)nombre1->getSur())->getPosiciony())
+						{
+							file << "O" << nombre1 << "->" << "O" << (Cabecera*)nombre1->getSur() << "\n";
+							file << "O" << (Cabecera*)nombre1->getSur() << "->O" << nombre1 << "\n";
+						}
+						if (nombre1->getPosicionx() == ((Cabecera*)nombre1->getEste())->getPosicionx())
+						{
+							file << "O" << nombre1 << "->" << "O" << (Cabecera*)nombre1->getEste() << "\n";
+							file << "O" << (Cabecera*)nombre1->getEste() << "->O" << nombre1 << "\n";
+						}
+
+						
+
+					}
+
+					nombre1 = (Cabecera*)nombre1->getSur();
+				}
+				nombre = (Cabecera*)nombre->getEste();
+
+				
+			}
+			
+		
+		//fin de graficar Horizontal
+
+		
+			//Graficar Vertical
+			
+
+			//fin de graficar Vertical
 		
 		file << "}";
 	}
