@@ -43,3 +43,6 @@ void ListaPared::Print(string id_Proyecto, string nombre_nivel)
 		}
 	}
 } 
+Pared* ListaPared::returnroot() {
+	return root2;
+}

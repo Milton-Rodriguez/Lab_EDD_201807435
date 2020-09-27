@@ -47,11 +47,6 @@ int main()
             consulta->Print(nombreproyecto);
             cin >> numeronivel;
 
-            cout << "\nParedes:\n";
-            ListaPared* consulta2 = new ListaPared();
-            consulta2->Print(nombreproyecto, numeronivel);
-
-
             cout << "\nObjetos:\n";
             ListaObjeto* consulta3 = new ListaObjeto();
             consulta3->Print(nombreproyecto, numeronivel);
@@ -61,7 +56,39 @@ int main()
 
         }
         else if (menu_opcion == 2) {
-            //Editar Proyectos
+            bool editar_nivel = true;
+            while (editar_nivel == true)
+            {
+                int menu_editar;
+                system("cls");
+                cout << "*************************MENU*******************************\n";
+                cout << "1. Agregar Nivel\n";
+                cout << "2. Editar Nivel\n";
+                cout << "3. Eliminar Nivel\n";
+                cout << "4. Eliminar Proyecto\n";
+                cout << "0. Salir\n";
+                cin >> menu_editar;
+                if (menu_editar == 1)
+                {
+                    string ruta_editar;
+                    string nombreproyecto;
+                    cout << "\nIngrese el Nombre del Proyecto al que desea ingresar:\n";
+                    ArbolAVL* anadir12 = new ArbolAVL();
+                    anadir12->inOrden();
+                    cin >> nombreproyecto;
+                    cout << "Ingrese la Ruta del Archivo Json\n";
+                    cin >> ruta_editar;
+                    ReadJSON* cargar = new ReadJSON();
+                    cargar->anadir1(nombreproyecto,ruta_editar);
+                    cout << "Elementos Guardados Correctamente\n";
+                    cin.get();
+                    cin >> nombreproyecto;
+                }
+                else {
+                    editar_nivel = false;
+                }
+              
+            }
         }
         else if (menu_opcion == 3) {
             //Cargar Proyectos

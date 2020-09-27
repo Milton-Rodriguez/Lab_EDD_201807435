@@ -33,12 +33,12 @@ void ListaObjeto::Print(string id_Proyecto, string nombre_nivel)
 	ListaNivel* busquedNivel = new ListaNivel();
 	Nivel* ta =busquedNivel->Buscar(id_Proyecto, nombre_nivel);
 	Puntos* ta1 = ta->tamano;
-	cout << "La MAtriz dispersa sera de Tamano de en X: " << ta1->x << " Y: " << ta1->y;
+	
 	
 	Matriz* matt = new Matriz();
 	if (root3 != nullptr) {
 		Objeto* aux = root3;
-		while (aux != nullptr) {
+		while (aux != NULL) {
 			if (aux->id_Proyecto == id_Proyecto && aux->nombre_nivel == nombre_nivel)
 			{
 
@@ -63,9 +63,10 @@ void ListaObjeto::Print(string id_Proyecto, string nombre_nivel)
 					{
 						
 						cout << " X: " << ini[i]->x << " Y: " << ini[i]->y << "\n";
-						Elemento* nn = new Elemento(aux->id_Proyecto, aux->nombre_nivel, ini[0]->x, ini[0]->y);
+						Elemento* nn = new Elemento(aux->id_Proyecto, aux->nombre_nivel, ini[i]->x, ini[i]->y);
 						nn->setObjeto(aux);
 						matt->add(nn);
+
 
 
 					}
@@ -77,8 +78,15 @@ void ListaObjeto::Print(string id_Proyecto, string nombre_nivel)
 			aux = aux->siguiente;
 		}
 	}
-	if (root2 != nullptr) {
-		Pared* aux = root2;
+
+	//graficar paredes
+
+	//graficar paredes
+	ListaPared* nuevalistapared = new ListaPared();
+	Pared* root2aux = nuevalistapared->returnroot();
+	if (root2aux != nullptr) {
+		Pared* aux = root2aux;
+		
 		while (aux != nullptr) {
 			if (aux->id_Proyecto == id_Proyecto && aux->nombre_nivel == nombre_nivel)
 			{
@@ -91,8 +99,8 @@ void ListaObjeto::Print(string id_Proyecto, string nombre_nivel)
 				cout << "Color: " << aux->color << "\n";
 				if (ini->x == fin->x)
 				{
-					int a = ini->y;
-					int b = fin->y;
+					int a = ini->x;
+					int b = fin->x;
 					while (a !=b)
 					{
 						

@@ -1,6 +1,6 @@
 #pragma once
 #include "NodoMatriz.h";
-class Elemento:public NodoMatriz
+class Elemento:public NodoMatriz,string
 {
 public:
 	Elemento(string nombreproyecto, string nombrenivel,int x,int y);
