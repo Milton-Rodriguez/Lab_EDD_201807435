@@ -28,13 +28,15 @@ void ListaObjeto::add(string id_Proyecto, string nombre_nivel, int identificador
 	}
 }
 
+
+
 void ListaObjeto::Print(string id_Proyecto, string nombre_nivel)
 {
 	ListaNivel* busquedNivel = new ListaNivel();
-	Nivel* ta =busquedNivel->Buscar(id_Proyecto, nombre_nivel);
+	Nivel* ta = busquedNivel->Buscar(id_Proyecto, nombre_nivel);
 	Puntos* ta1 = ta->tamano;
-	
-	
+
+
 	Matriz* matt = new Matriz();
 	if (root3 != nullptr) {
 		Objeto* aux = root3;
@@ -44,15 +46,15 @@ void ListaObjeto::Print(string id_Proyecto, string nombre_nivel)
 
 				cout << "Proyecto: " << aux->id_Proyecto << "  Nivel: " << aux->nombre_nivel << "\n";
 				Puntos** ini = aux->arreglo;
-				cout << "Identificador: " << aux->identificador<< "\n";
+				cout << "Identificador: " << aux->identificador << "\n";
 				cout << "Nombre: " << aux->nombre << "\n";
 				cout << "Letra: " << aux->letra << "\n";
 				cout << "Color: " << aux->color << "\n";
-				cout << "Puntos: " <<  "\n";
+				cout << "Puntos: " << "\n";
 				int longitud = aux->tamanoarreglo;
 				if (longitud == 1)
 				{
-					
+
 					cout << " X: " << ini[0]->x << " Y: " << ini[0]->y << "\n";
 					Elemento* nn = new Elemento(aux->id_Proyecto, aux->nombre_nivel, ini[0]->x, ini[0]->y);
 					nn->setObjeto(aux);
@@ -61,7 +63,7 @@ void ListaObjeto::Print(string id_Proyecto, string nombre_nivel)
 				else {
 					for (int i = 0; i < longitud; i++)
 					{
-						
+
 						cout << " X: " << ini[i]->x << " Y: " << ini[i]->y << "\n";
 						Elemento* nn = new Elemento(aux->id_Proyecto, aux->nombre_nivel, ini[i]->x, ini[i]->y);
 						nn->setObjeto(aux);
@@ -71,7 +73,7 @@ void ListaObjeto::Print(string id_Proyecto, string nombre_nivel)
 
 					}
 				}
-				
+
 
 			}
 
@@ -86,11 +88,11 @@ void ListaObjeto::Print(string id_Proyecto, string nombre_nivel)
 	Pared* root2aux = nuevalistapared->returnroot();
 	if (root2aux != nullptr) {
 		Pared* aux = root2aux;
-		
+
 		while (aux != nullptr) {
 			if (aux->id_Proyecto == id_Proyecto && aux->nombre_nivel == nombre_nivel)
 			{
-				
+
 				cout << "Proyecto: " << aux->id_Proyecto << "  Nivel: " << aux->nombre_nivel << "\n";
 				Puntos* ini = aux->inicio;
 				Puntos* fin = aux->final;
@@ -101,9 +103,9 @@ void ListaObjeto::Print(string id_Proyecto, string nombre_nivel)
 				{
 					int a = ini->x;
 					int b = fin->x;
-					while (a !=b)
+					while (a != b)
 					{
-						
+
 						Elemento* nn = new Elemento(id_Proyecto, nombre_nivel, ini->x, a);
 						nn->setPared(aux);
 						matt->add(nn);
@@ -116,7 +118,7 @@ void ListaObjeto::Print(string id_Proyecto, string nombre_nivel)
 					int b = fin->x;
 					while (a != b)
 					{
-						
+
 						Elemento* nn = new Elemento(id_Proyecto, nombre_nivel, a, ini->y);
 						nn->setPared(aux);
 						matt->add(nn);
@@ -128,9 +130,9 @@ void ListaObjeto::Print(string id_Proyecto, string nombre_nivel)
 					int b = fin->x;
 					int c = ini->y;
 					int d = fin->y;
-					while ((a == b) && c ==d)
+					while ((a == b) && c == d)
 					{
-						
+
 						Elemento* nn = new Elemento(id_Proyecto, nombre_nivel, a, c);
 						nn->setPared(aux);
 						matt->add(nn);
@@ -144,4 +146,60 @@ void ListaObjeto::Print(string id_Proyecto, string nombre_nivel)
 		}
 	}
 	matt->graficar();
+}
+
+void ListaObjeto::Print1(string id_Proyecto, string nombre_nivel)
+{
+	ListaNivel* busquedNivel = new ListaNivel();
+	Nivel* ta = busquedNivel->Buscar(id_Proyecto, nombre_nivel);
+	Puntos* ta1 = ta->tamano;
+
+
+	Matriz* matt = new Matriz();
+	if (root3 != nullptr) {
+		Objeto* aux = root3;
+		while (aux != NULL) {
+			if (aux->id_Proyecto == id_Proyecto && aux->nombre_nivel == nombre_nivel)
+			{
+
+				cout << "Identificador: " << aux->identificador << "\n";
+				cout << "Nombre: " << aux->nombre << "\n";
+
+
+			}
+
+			aux = aux->siguiente;
+		}
+	}
+
+	
+}
+
+void ListaObjeto::eliminar(string id_Proyecto, string nombre_nivel,int identificador)
+{
+	ListaNivel* busquedNivel = new ListaNivel();
+	Nivel* ta = busquedNivel->Buscar(id_Proyecto, nombre_nivel);
+	Puntos* ta1 = ta->tamano;
+
+
+	Matriz* matt = new Matriz();
+	if (root3 != nullptr) {
+		Objeto* aux = root3;
+		while (aux != NULL) {
+			if (aux->id_Proyecto == id_Proyecto && aux->nombre_nivel == nombre_nivel && aux->identificador == identificador)
+			{
+				Objeto* anterio = aux->anterior;
+				Objeto* siguient = aux->siguiente;
+				anterio->siguiente = siguient;
+				siguient->anterior = anterio;
+				cout << "Eliminado Correctamente";
+
+
+			}
+
+			aux = aux->siguiente;
+		}
+	}
+
+
 }

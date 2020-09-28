@@ -52,3 +52,36 @@
 		 }
 	 }
  }
+
+ Nivel* ListaNivel::Eliminar(string id_Proyecto, string nombre_nivel)
+ {
+	 if (root1 != nullptr) {
+		 Nivel* aux = root1;
+		 while (aux != nullptr) {
+			 if (aux->id_Proyecto == id_Proyecto && aux->nombre_nivel == nombre_nivel)
+			 {
+				 Nivel* anterior = aux->anterior;
+				 Nivel* siguiente = aux->siguiente;
+				 if (anterior != NULL)
+				 {
+					 anterior->siguiente = siguiente;
+					 siguiente->anterior = anterior;
+				 }
+				 else {
+					 root1 = siguiente;
+				 }
+				 if (siguiente != NULL)
+				 {
+					 anterior->siguiente = siguiente;
+					 siguiente->anterior = anterior;
+				 }
+				 else {
+					 anterior->siguiente = NULL;
+				 }
+				 return aux;
+			 }
+
+			 aux = aux->siguiente;
+		 }
+	 }
+ }
